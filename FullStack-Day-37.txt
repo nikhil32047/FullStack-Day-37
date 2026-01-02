@@ -1,0 +1,66 @@
+Day 37:
+==========
+
+a) Method Overriding & Constructor Overriding:
+=================================================
+
+Method Overriding:
+Method overriding occurs when a child class provides its own implementation of a method already defined in the parent class.
+The method name and parameters must be the same.
+
+Example:
+class Parent:
+    def show(self):
+        print("Parent method")
+
+class Child(Parent):
+    def show(self):
+        print("Child method")
+
+c = Child()
+c.show()   # Child method
+
+Key Points:
+Achieves runtime polymorphism
+Parent method can be accessed using super()
+Constructor Overriding
+If a child class defines its own constructor, it overrides the parent constructor.
+Use super() to call the parent constructor.
+
+Example:
+class Parent:
+    def __init__(self):
+        print("Parent constructor")
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        print("Child constructor")
+
+Child()
+
+
+b) Duck Typing in Python:
+==============================
+Duck typing focuses on object behavior, not type.
+“If it looks like a duck and quacks like a duck, it’s a duck.”
+
+Example:
+class Dog:
+    def speak(self):
+        print("Bark")
+
+class Cat:
+    def speak(self):
+        print("Meow")
+
+def animal_sound(obj):
+    obj.speak()
+
+animal_sound(Dog())
+animal_sound(Cat())
+
+Key Points:
+No inheritance required
+Flexible and dynamic
+Common in Python frameworks.
